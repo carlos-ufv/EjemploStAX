@@ -47,7 +47,7 @@ public class Lector1 {
     public static void main(String[] args) {
         Lector lector = new Lector();
         try {
-            System.out.printf("Número de plazas: %d%n", lector.numeroDePlazas());
+            System.out.printf("Número de plazas: %d", lector.numeroDePlazas());
         } catch (IOException e) {
             e.printStackTrace();
         }
