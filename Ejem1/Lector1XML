@@ -15,7 +15,7 @@ public class Lector1 {
 
     public int numeroDePlazas() throws FileNotFoundException, IOException {
         int numeroPlazas = 0;
-
+		//comentario
         XMLInputFactory xmlInputFactory = XMLInputFactory.newFactory();
         InputStream inputStream = null;
         XMLStreamReader xmlStreamReader = null;
