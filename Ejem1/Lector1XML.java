@@ -8,7 +8,7 @@ import java.io.InputStream;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
-
+//Daniel Ojeda
 public class Lector1 {
     public static final String DOCUMENTO_XML = "D:\\Cloud\\Mega\\UFV\\DIS\\2-JSON _ XML\\Projects\\XML\\EjemploXML\\src\\com\\carlos\\parking.xml";
     public static final String ELEMENTO_PLAZA = "plaza";
