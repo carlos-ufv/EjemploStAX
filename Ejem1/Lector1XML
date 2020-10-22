@@ -14,7 +14,8 @@ public class Lector1 {
     public static final String ELEMENTO_PLAZA = "plaza";
 
     public int numeroDePlazas() throws FileNotFoundException, IOException {
-        int numeroPlazas = 0;
+        int numeroPlazas = 1;
+        numeroPlazas = 0;
 
         XMLInputFactory xmlInputFactory = XMLInputFactory.newFactory();
         InputStream inputStream = null;
