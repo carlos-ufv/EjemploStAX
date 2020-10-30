@@ -1,5 +1,3 @@
-package com.carlos;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,8 +7,8 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
-public class Lector1 {
-    public static final String DOCUMENTO_XML = "D:\\Cloud\\Mega\\UFV\\DIS\\2-JSON _ XML\\Projects\\XML\\EjemploXML\\src\\com\\carlos\\parking.xml";
+public class Lector1XML {
+    public static final String DOCUMENTO_XML = "//Volumes//DATA MAC OSX//andres//Documents//aaUni//Tercer Curso//Primer Cuatrimestre//DIS//GitProyects//EjemploStAx_forked//parking.xml";
     public static final String ELEMENTO_PLAZA = "plaza";
 
     public int numeroDePlazas() throws FileNotFoundException, IOException {
@@ -45,7 +43,7 @@ public class Lector1 {
     }
 
     public static void main(String[] args) {
-        Lector lector = new Lector();
+        Lector1XML lector = new Lector1XML();
         try {
             System.out.printf("Número de plazas: %d", lector.numeroDePlazas());
         } catch (IOException e) {

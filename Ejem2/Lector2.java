@@ -1,4 +1,3 @@
-package org.carlos;
 // Este ejemplo permite parsear y mostrar las dos primeras etiquetas del doc XML llamado parking.xml
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,8 +10,8 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
-public class Lector {
-    public static final String DOCUMENTO_XML = "D:\\Cloud\\Mega\\UFV\\DIS\\2-JSON _ XML\\Projects\\XML\\EjemploXML\\src\\com\\carlos\\parking.xml"; //Path absoluto al fic. XML
+public class Lector2 {
+    public static final String DOCUMENTO_XML = "//Volumes//DATA MAC OSX//andres//Documents//aaUni//Tercer Curso//Primer Cuatrimestre//DIS//GitProyects//EjemploStAx_forked//parking.xml"; //Path absoluto al fic. XML
     public static final String ELEMENTO_PLAZA = "plaza";
     public static final String ELEMENTO_MATRICULA = "matricula";
     public static final String ATRIBUTO_ID = "id";
@@ -72,7 +71,7 @@ public class Lector {
     }
 
     public static void main(String[] args) {
-        Lector lector = new Lector();
+        Lector2 lector = new Lector2();
         try {
             System.out.println("Matrículas con id: " + lector.matriculasConId());
         } catch (FileNotFoundException e) {
