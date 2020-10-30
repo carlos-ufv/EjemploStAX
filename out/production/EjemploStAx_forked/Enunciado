@@ -1,5 +1,0 @@
-A partir del documento empleados.xml mostrar únicamente aquellos cuyo salario sea superior o igual a 30000.
-El resultado deberá mostrar 
- Iniciando el documento
- Fin del documento
- Empleados con salario mayor a 30000: [Pedro, Bill,  María Isabel, Claudia]
