@@ -16,7 +16,6 @@ public class Lector {
     public static final String DOCUMENTO_XML = "C:\\Users\\Miguel\\IdeaProjects\\EjemploStAX\\Práctica\\empleados.xml "; //Path absoluto al fic. XML
     public static final String ELEMENTO_NOMBRE = "nombre";
     public static final String ELEMENTO_SALARIO = "salario";
-    public static final String ATRIBUTO_ID = "id";
 
     public List<String> empleadoConSalario(int salario) throws FileNotFoundException {
         List<String> empleadoConSalarioList = new ArrayList<String>();
