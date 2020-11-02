@@ -1,6 +1,6 @@
-package ejemplo;
 
-// Este ejemplo permite parsear y mostrar las dos primeras etiquetas del doc XML llamado parking.xml
+// Este ejemplo permite parsear y mostrar los empleados que figuran en el doc XML llamado empleados.xml cuyo salario
+// es mayor o igual a 30000
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 
 public class Lector {
-    public static final String DOCUMENTO_XML = "/home/ubuntu/DIS/GitProjects/ejemplostax_forked/Práctica/empleados.xml"; //Path absoluto al fic. XML
+    public static final String DOCUMENTO_XML = "C:\\Users\\Miguel\\IdeaProjects\\EjemploStAX\\Práctica\\empleados.xml "; //Path absoluto al fic. XML
     public static final String ELEMENTO_NOMBRE = "nombre";
     public static final String ELEMENTO_SALARIO = "salario";
     public static final String ATRIBUTO_ID = "id";
@@ -41,8 +41,8 @@ public class Lector {
                 }
 
                 if (xmlStreamReader.isStartElement() && ELEMENTO_SALARIO.equals(xmlStreamReader.getLocalName())) {
-                    // Obtenemos el texto contenido dentro del elemento (entre las etiquetas de apertura y cierre)
-                    if (Integer.parseInt(xmlStreamReader.getElementText()) >= salario) {
+                    // Obtenemos el texto contenido dentro del elemento (el salrio) y lo comparamos con el salario dado
+                    if (Integer.parseInt(xmlStreamReader.getElementText()) >= salario) { //si es mayor o igual, guardamos el nombre del empleado
                         empleadoConSalarioList.add(nombre.toString());
                     }
 
@@ -71,7 +71,7 @@ public class Lector {
 
     public static void main(String[] args) {
         Lector lector = new Lector();
-        try {
+        try { //Aquí buscamos empleados con un salario superior o igual a 30000
             System.out.println("Empleados con salario mayor a 30000: " + lector.empleadoConSalario(30000));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
