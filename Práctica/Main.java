@@ -1,59 +1,65 @@
 //Carpeta en la que guardamos los archivos
 package com.company;
 //Librerias que necesitamos
-import org.w3c.dom.Element;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
-import org.xml.sax.SAXException;
-import java.io.File;
-import java.util.List;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.io.IOException;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.ParserConfigurationException;
+import java.io.InputStream;
 
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
 
 
 //Clase que realiza el parseo
 class Main{
-    public static void main(String[] args) throws ParserConfigurationException,SAXException, IOException {
+//Guardamos estos strings con los que se realizan las comparaciones
+    private static final String NOMBRE="nombre";
+    private static final String SALARIO="salario";
 
-        //Document builder
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
+    public static void main(String[] args) throws FileNotFoundException,XMLStreamException{
 
-        //Cargamos el documento y lo parseamos
-        Document document = builder.parse(new File("parking.xml"));
+        //Creacion de streamreader
+        XMLInputFactory xmlInputFactory = XMLInputFactory.newFactory();
+        InputStream inputStream = null;
+        XMLStreamReader xmlStreamReader = null;
+        inputStream = new FileInputStream("empleados.xml");
+        xmlStreamReader = xmlInputFactory.createXMLStreamReader(inputStream);
 
-        List<plaza> parking = new ArrayList<plaza>();
-        NodeList nodeList = document.getDocumentElement().getChildNodes();
-        for (int i = 0; i < nodeList.getLength(); i++) {
-            Node node = nodeList.item(i);
+        //Creacion array para guardar los nombres
+        ArrayList<String> nombres= new ArrayList<String>();
 
-            if (node.getNodeType() == Node.ELEMENT_NODE) {
-                Element elem = (Element) node;
+        //Creacion de variables
+        int evento;
+        String tag=null,nombre=null,salario= null;
 
-                // Obtenemos el valor del ID
-                String ID = node.getAttributes().getNamedItem("id").getNodeValue();
+        //Imprime 'iniciando el documento' al inicio del documento
+        System.out.println("Iniciando el documento");
+        //Entrara al bucle siempre que existan elementos a parsear
+        while (xmlStreamReader.hasNext()){
+            evento=xmlStreamReader.next();
 
-                //Obtenemos el valor de los subelementos que son la matricula, propietario,telefono y vencimiento
-                //Matricula
-                String matricula = elem.getElementsByTagName("matricula").item(0).getChildNodes().item(0).getNodeValue();
-                //Porpietario
-                String propietario = elem.getElementsByTagName("propietario").item(0).getChildNodes().item(0).getNodeValue();
-                //Telefono
-                String telefono = elem.getElementsByTagName("telefono").item(0).getChildNodes().item(0).getNodeValue();
-                //Vencimiento
-                String vencimiento = elem.getElementsByTagName("vencimiento").item(0).getChildNodes().item(0).getNodeValue();
-                //Creamos el objeto plaza para cada plaza
-                parking.add(new plaza(ID, matricula, propietario, telefono, vencimiento));
+            if (evento== xmlStreamReader.START_ELEMENT){
+            tag= xmlStreamReader.getLocalName();
+                //En el caso de que se trate de un nombre se guarda por si se cumple la condicion
+                if (tag==NOMBRE){
+                    nombre=xmlStreamReader.getElementText();
+
+                }else if(tag==SALARIO){
+                    salario=xmlStreamReader.getElementText();
+                    //En el caso de que el salario sea superior a 30000 se añadira el nombre al array de nombres
+                    if (Integer.parseInt(salario)>=30000){
+                        nombres.add(nombre);
+                    }
+                }
+
+            }else if (evento==XMLStreamReader.END_DOCUMENT){
+                //Imprime 'fin el documento' al final del documento
+                System.out.println("Fin del documento");
             }
         }
-
-        //Imprimimos
-        for (plaza pla: parking)
-            System.out.println(pla.toString());
+        //Impresion de los empleados cuyo salario es superior a 30000
+        System.out.println("Empleados con salario mayor a 30000: "+ nombres);
     }
+
 }
