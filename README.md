@@ -5,3 +5,4 @@ StAX (Streaming API for XML) es el API más reciente de JAXP (Java API for XML P
 Puedes consultar la documentación oficial en este enlace: https://docs.oracle.com/javase/tutorial/jaxp/stax/index.html 
 <br>
 En esta página puedes ver un buen ejemplo de cómo generar documentos XML válidos: https://www.tutorialspoint.com/java_xml/java_stax_modify_document.htm
+holaaa
