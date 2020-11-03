@@ -1,0 +1,62 @@
+<empleados>
+	<empleado id="1">
+		<nombre>Pedro</nombre>
+		<apellido>Luengo</apellido>
+		<salario>30000</salario>
+		<cargo>programador</cargo>
+		<direccion>
+			<ciudad>Madrid</ciudad>
+			<provincia>Madrid</provincia>
+			<cp>28020</cp>
+			<calle>alcala</calle>
+		</direccion>
+	</empleado>
+	<empleado id="2">
+		<nombre>Bill</nombre>
+		<apellido>Gates</apellido>
+		<salario>350000</salario>
+		<cargo>Programador</cargo>
+		<direccion>
+			<ciudad>Coslada</ciudad>
+			<provincia>Madrid</provincia>
+			<cp>28820</cp>
+			<calle>henares</calle>
+		</direccion>
+	</empleado>
+	<empleado id="3">
+		<nombre>María Isabel</nombre>
+		<apellido>Bueno</apellido>
+		<salario>35500</salario>
+		<cargo>Contralor</cargo>
+		<direccion>
+			<ciudad>Torrejon de Ardoz</ciudad>
+			<provincia>Madrid</provincia>
+			<cp>28850</cp>
+			<calle>Guadiana</calle>
+		</direccion>
+	</empleado>
+	<empleado id="4">
+		<nombre>Manuel</nombre>
+		<apellido>Iglesias</apellido>
+		<salario>28000</salario>
+		<cargo>gerente</cargo>
+		<direccion>
+			<ciudad>Madrid</ciudad>
+			<provincia>Madrid</provincia>
+			<cp>28029</cp>
+			<calle>Ladera</calle>
+		</direccion>
+	</empleado>
+	<empleado id="5">
+		<nombre>Claudia</nombre>
+		<apellido>Cano</apellido>
+		<salario>200000</salario>
+		<cargo>Directora</cargo>
+		<direccion>
+			<ciudad>Madrid</ciudad>
+			<provincia>Madrid</provincia>
+			<cp>28002</cp>
+			<calle>Lopez de Hoyos</calle>
+		</direccion>
+	</empleado>
+</empleados>
