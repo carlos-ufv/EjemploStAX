@@ -13,3 +13,6 @@ The Cursor API es más eficiente en cuanto a memorias.
 Puedes consultar la documentación oficial en este enlace: https://docs.oracle.com/javase/tutorial/jaxp/stax/index.html 
 <br>
 En esta página puedes ver un buen ejemplo de cómo generar documentos XML válidos: https://www.tutorialspoint.com/java_xml/java_stax_modify_document.htm
+
+
+Cambio realizado por Marcos Rodriguez
