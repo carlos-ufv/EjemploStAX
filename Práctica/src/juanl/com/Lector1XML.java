@@ -22,7 +22,6 @@ class Practica1 {
         //Leemos el archicvo con los datos
         XMLStreamReader xmlreader = xmlinput.createXMLStreamReader(new FileReader("src/empleados.xml"));
         //Inicializamos  las variables
-
         ArrayList<String> names = new ArrayList<>();
         int eventType;
         String salr;
@@ -35,7 +34,7 @@ class Practica1 {
         while (xmlreader.hasNext()){
             //El cursor leera el documento y con eventType entrará en el if
             eventType = xmlreader.next();
-
+                //VAmos leyendo los tags y en el caso de que su sueldo supere los 3000 lo guardamos
                 if (eventType==XMLEvent.START_ELEMENT) {
                     tag = xmlreader.getLocalName();
                     if (tag.equals(NOM)) {
