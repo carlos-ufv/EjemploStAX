@@ -7,4 +7,4 @@ Puedes consultar la documentación oficial en este enlace: https://docs.oracle.c
 En esta página puedes ver un buen ejemplo de cómo generar documentos XML válidos: https://www.tutorialspoint.com/java_xml/java_stax_modify_document.htm
 
 
-Cambio realizado por Marcos Rodriguez
+Cambio realizado por Marcos Rodriguezd
